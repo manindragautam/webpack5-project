@@ -41,12 +41,13 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({ filename: "[name].bundle.css" }),
     new HtmlWebpackPlugin({ template: "./src/template.html" }),
   ],
   devtool: "source-map",
   devServer: {
     contentBase: "./dist",
+    port: 3000,
     hot: true,
   },
 };
